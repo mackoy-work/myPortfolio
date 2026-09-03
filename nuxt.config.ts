@@ -2,7 +2,8 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
 
   app: {
-    baseURL: '/myPortfolio/',
+    // Use '/' when serving from a custom domain (e.g. mackoy.dev)
+    baseURL: process.env.NUXT_APP_BASE_URL || '/',
     head: {
       title: 'Mark Anthony Ogao-ogao — Portfolio',
       meta: [
