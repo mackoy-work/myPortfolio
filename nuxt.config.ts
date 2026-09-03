@@ -2,6 +2,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
 
   app: {
+    baseURL: '/myPortfolio/',
     head: {
       title: 'Mark Anthony Ogao-ogao — Portfolio',
       meta: [
