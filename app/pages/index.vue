@@ -388,7 +388,7 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
 
   <!-- FOOTER -->
   <footer class="px-6 md:px-[7vw] py-10 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-navy/[0.06] bg-white/30 backdrop-blur-sm text-[0.78rem] text-muted">
-    <span class="font-serif text-[0.95rem] text-navy">M<span class="text-teal-m">.</span>A · 2025</span>
+    <span class="font-serif text-[0.95rem] text-navy">M<span class="text-teal-m">.</span>A · 2026</span>
     <div class="flex items-center gap-2">
       <div class="w-1.5 h-1.5 rounded-full bg-teal-m/50" />
       <span>Designed with care · BS Information Technology</span>

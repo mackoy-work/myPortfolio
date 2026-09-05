@@ -1,6 +1,6 @@
-import { defineConfig } from 'tailwindcss'
+import type { Config } from 'tailwindcss'
 
-export default defineConfig({
+export default {
   content: [
     './app/**/*.{vue,js,ts,jsx,tsx}',
     './components/**/*.{vue,js,ts}',
@@ -81,4 +81,4 @@ export default defineConfig({
     },
   },
   plugins: [],
-} satisfies Config
+} as Partial<Config>
