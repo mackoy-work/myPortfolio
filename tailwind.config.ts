@@ -1,6 +1,11 @@
-import type { Config } from 'tailwindcss'
+import { defineConfig } from 'tailwindcss'
 
-export default {
+export default defineConfig({
+  content: [
+    './app/**/*.{vue,js,ts,jsx,tsx}',
+    './components/**/*.{vue,js,ts}',
+    './pages/**/*.vue',
+  ],
   theme: {
     extend: {
       colors: {
@@ -10,8 +15,8 @@ export default {
         sand: '#b5a97a',
         peach: '#fac882',
         cream: '#fdfaf5',
-        text: '#1a2240',
-        muted: '#7a8499',
+        text: '#080d1a',
+        muted: '#1e2a3d',
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'serif'],
@@ -75,4 +80,5 @@ export default {
       },
     },
   },
+  plugins: [],
 } satisfies Config

@@ -3,7 +3,7 @@ export default defineNuxtConfig({
 
   app: {
     // Use '/' when serving from a custom domain (e.g. mackoy.dev)
-    baseURL: process.env.NUXT_APP_BASE_URL || '/',
+    baseURL: '/myPortfolio/',
     head: {
       title: 'Mark Anthony Ogao-ogao — Portfolio',
       meta: [

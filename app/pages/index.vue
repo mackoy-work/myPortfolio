@@ -4,17 +4,26 @@ useScrollReveal()
 const mobileMenuOpen = ref(false)
 
 const skills = [
-  { icon: '🌐', category: 'Web Development', items: 'PHP · Laravel · Nuxt JS · HTML · CSS · JavaScript · ExpressJS' },
-  { icon: '⚛️', category: 'Frontend', items: 'React JS · Tailwind CSS · Responsive Design · Component Architecture' },
-  { icon: '💻', category: 'Programming', items: 'Python · Django · Java · C++ · Algorithm Design · OOP' },
+  { icon: '🌐', category: 'Web Development', items: 'PHP · Laravel · Nuxt JS · Vue JS · HTML · CSS · JavaScript · ExpressJS' },
+  { icon: '⚛️', category: 'Frontend', items: 'React JS · Vue JS · Tailwind CSS · Responsive Design · Component Architecture' },
+  { icon: '💻', category: 'Programming', items: 'Python · Django · Java · C++ · Arduino · Algorithm Design · OOP' },
   { icon: '🗺️', category: 'Specialized', items: 'GIS Mapping · Spatial Analytics · Image Processing · AI Fundamentals' },
-  { icon: '🗄️', category: 'Database & Tools', items: 'MySQL · Database Design · Query Optimization · Figma' },
-  { icon: '🔧', category: 'DevOps & Auth', items: 'PHPMailer · Email Systems · Admin Panels · Role-based Access Control' },
+  { icon: '🗄️', category: 'Database & Tools', items: 'MySQL · PostgreSQL · SQLite · Database Design · Query Optimization · Figma · Git' },
+  { icon: '🔧', category: 'DevOps & Auth', items: 'Docker · Git · PHPMailer · Email Systems · Admin Panels · Role-based Access Control' },
+  { icon: '💳', category: 'Payments & Integrations', items: 'PayMongo · Stripe · Payment Gateway Setup · API Integration' },
 ]
 
 const projects = [
   {
     num: '01',
+    name: 'Tech Savvies Community Platform',
+    desc: 'A full-stack community web platform for an IT organization built solo during internship. Features news publishing, member courses, merchandise store, event reminders, membership portal, and a members-only dashboard — all in one production site.',
+    tags: ['Nuxt JS', 'Vue JS', 'TypeScript', 'Django', 'PostgreSQL', 'PayMongo'],
+    link: 'https://www.techsavvies.space/',
+    linkLabel: 'Live Site',
+  },
+  {
+    num: '02',
     name: 'GIS Dog Bite Surveillance System',
     desc: 'A full-stack public health platform for anti-rabies vaccination scheduling and bite case monitoring with GIS clinic mapping and multi-role authentication.',
     tags: ['PHP', 'Laravel', 'GIS', 'MySQL', 'PHPMailer'],
@@ -22,7 +31,7 @@ const projects = [
     linkLabel: 'Live Site',
   },
   {
-    num: '02',
+    num: '03',
     name: 'Booking System',
     desc: 'A web-based reservation platform with complete admin panel, user management, and booking workflow with reliable back-end transaction handling.',
     tags: ['Laravel', 'PHP', 'JavaScript', 'MySQL'],
@@ -30,7 +39,7 @@ const projects = [
     linkLabel: 'Details',
   },
   {
-    num: '03',
+    num: '04',
     name: 'E-commerce Website',
     desc: 'A full-featured online store with product listings, cart functionality, order management, and a comprehensive admin dashboard.',
     tags: ['Laravel', 'PHP', 'JavaScript', 'MySQL'],
@@ -39,11 +48,13 @@ const projects = [
   },
 ]
 
-const pills = ['PHP & Laravel', 'Nuxt JS', 'React JS', 'Tailwind CSS', 'JavaScript', 'Python', 'Django', 'Java', 'C++', 'GIS Mapping', 'MySQL', 'ExpressJS', 'Figma']
+const pills = ['PHP & Laravel', 'Nuxt JS', 'Vue JS', 'React JS', 'Tailwind CSS', 'JavaScript', 'Python', 'Django', 'Java', 'C++', 'GIS Mapping', 'MySQL', 'PostgreSQL', 'SQLite', 'ExpressJS', 'Docker', 'Git', 'Arduino', 'PayMongo', 'Stripe', 'Figma']
 
 const education = [
-  { year: '2022 – Present', school: 'Misamis University', degree: 'BS Information Technology' },
-  { year: '2020 – 2021', school: 'Pulot National High School', degree: 'Senior High School · With Honors' },
+  { year: '2022 – 2026', school: 'Misamis University', degree: 'Bachelor of Science Major in Information Technology' },
+  { year: '2020 – 2022', school: 'Pulot National High School', degree: 'Senior High School · With Honors', extra: 'Strand - Electrical Installation and Maintenance (EIM)' },
+  { year: '2016 – 2020', school: 'Pulot National High School', degree: 'High School · With Honors' },
+  { year: '2010 – 2016', school: 'Dimaluna Elementary School', degree: 'Elementary · With Honors' },
 ]
 
 const navSections = ['About', 'Skills', 'Projects', 'Contact']
@@ -61,7 +72,7 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
       <li v-for="section in navSections" :key="section">
         <a
           :href="`#${section.toLowerCase()}`"
-          class="relative no-underline text-[0.75rem] font-medium text-muted tracking-widest uppercase transition-colors duration-300 hover:text-navy after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-m after:transition-all after:duration-300 hover:after:w-full"
+          class="relative no-underline text-[0.75rem] font-bold text-navy tracking-widest uppercase transition-colors duration-300 hover:text-teal-d after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-teal-m after:transition-all after:duration-300 hover:after:w-full"
         >
           {{ section }}
         </a>
@@ -100,8 +111,8 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
     class="min-h-screen grid grid-cols-1 md:grid-cols-[1.1fr_1fr] pt-20 relative overflow-hidden bg-mesh-hero"
   >
     <div class="flex flex-col justify-center items-center text-center md:items-start md:text-left px-6 md:px-[4vw] md:pl-[7vw] pt-12 pb-4 md:py-[6vw] relative z-[2]">
-      <span class="inline-block text-[0.72rem] font-medium tracking-[0.18em] uppercase text-teal-m border border-teal-m/30 rounded-full px-4 py-1.5 mb-8 opacity-0 animate-fade-up-1 bg-white/60 backdrop-blur-sm shadow-soft">
-        IT Intern · Ozamiz City, PH
+      <span class="inline-block text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-navy border border-navy/40 rounded-full px-4 py-1.5 mb-8 opacity-0 animate-fade-up-1 bg-white/60 backdrop-blur-sm shadow-soft">
+        IT Graduate · Ozamiz City, PH
       </span>
 
       <h1 class="font-serif text-[clamp(2.5rem,7vw,5.5rem)] font-light leading-[1.05] text-navy mb-6 opacity-0 animate-fade-up-2">
@@ -110,7 +121,7 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
       </h1>
 
       <p class="text-base text-muted leading-7 max-w-[420px] mb-10 opacity-0 animate-fade-up-3 text-balance">
-        A passionate Information Technology student building thoughtful web applications and full-stack platforms.
+        A fresh Information Technology graduate building thoughtful web applications and full-stack platforms.
       </p>
 
       <div class="flex flex-wrap justify-center md:justify-start gap-3 opacity-0 animate-fade-up-4">
@@ -133,7 +144,7 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
         <div class="w-10 h-px bg-sand relative overflow-hidden">
           <span class="absolute left-[-100%] top-0 w-full h-full bg-navy animate-scan-line" />
         </div>
-        <span class="text-[0.72rem] tracking-[0.15em] uppercase text-muted">Scroll to explore</span>
+        <span class="text-[0.72rem] tracking-[0.15em] uppercase text-navy font-semibold">Scroll to explore</span>
       </div>
     </div>
 
@@ -149,7 +160,7 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
       <div class="absolute bottom-[28%] right-[8%] w-2 h-2 rounded-full bg-teal-m/40 opacity-0 animate-fade-in-2 z-[3]" />
       <div class="relative z-[2] opacity-0 animate-fade-up-5 mr-[-30px] group">
         <img
-          src="/image.jpg"
+          src="/image.png"
           alt="Mark Anthony Ogao-ogao"
           class="relative z-[2] w-[380px] max-h-[80vh] object-contain object-bottom animate-float drop-shadow-[0_20px_50px_rgba(37,53,112,0.5)] transition-transform duration-700 ease-out group-hover:scale-105"
           style="clip-path: ellipse(80% 130% at 50% 100%);"
@@ -163,7 +174,7 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
       <div class="absolute bottom-4 w-[220px] h-[220px] rounded-full border border-dashed border-navy/20 animate-spin-slow" />
       <div class="relative z-[2] opacity-0 animate-fade-up-5">
         <img
-          src="/image.jpg"
+          src="/image.png"
           alt="Mark Anthony Ogao-ogao"
           class="relative z-[2] w-[260px] max-h-[50vh] object-contain object-bottom animate-float drop-shadow-[0_15px_40px_rgba(37,53,112,0.35)]"
           style="clip-path: ellipse(85% 125% at 50% 100%);"
@@ -187,7 +198,7 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
       <div class="mt-10">
         <div
           v-for="(edu, i) in education"
-          :key="edu.school"
+          :key="i"
           class="flex gap-6 pb-8 relative"
         >
           <div
@@ -199,9 +210,10 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
             <div class="w-2 h-2 rounded-full bg-teal-m" />
           </div>
           <div>
-            <div class="text-[0.72rem] text-muted tracking-wide mb-1">{{ edu.year }}</div>
-            <div class="font-medium text-navy text-[0.95rem]">{{ edu.school }}</div>
-            <div class="text-[0.85rem] text-muted mt-0.5">{{ edu.degree }}</div>
+            <div class="text-[0.78rem] text-navy font-bold tracking-wide mb-0.5">{{ edu.year }}</div>
+            <div class="font-semibold italic text-navy text-[0.95rem]">{{ edu.school }}</div>
+            <div class="text-[0.82rem] text-navy/80 mt-0.5 font-medium">{{ edu.degree }}</div>
+            <div v-if="edu.extra" class="text-[0.78rem] text-navy/70 mt-0.5">{{ edu.extra }}</div>
           </div>
         </div>
       </div>
@@ -209,7 +221,7 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
 
     <div class="reveal rounded-3xl border border-navy/[0.06] bg-white/55 backdrop-blur-md shadow-soft p-8 md:p-10 ring-1 ring-white/60">
       <p class="text-base leading-[1.85] text-muted mb-5 text-pretty">
-        I'm <strong class="text-text font-medium">Mark Anthony A. Ogao-ogao</strong>, a BS Information Technology student at Misamis University currently completing my <strong class="text-text font-medium">internship</strong>. I enjoy building complete, functional systems, spanning web development, programming, and AI.
+        I'm <strong class="text-text font-medium">Mark Anthony A. Ogao-ogao</strong>, a BS Information Technology graduate from Misamis University. I enjoy building complete, functional systems, spanning web development, programming, and AI.
       </p>
       <p class="text-base leading-[1.85] text-muted mb-5 text-pretty">
         I thrive on solving real-world problems through technology, as demonstrated by my GIS-based public health surveillance project that helps communities manage rabies control more effectively.
@@ -219,7 +231,7 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
         <span
           v-for="pill in pills"
           :key="pill"
-          class="bg-navy/[0.03] text-navy border border-navy/[0.08] px-4 py-1.5 rounded-full text-[0.75rem] font-medium transition-all duration-300 hover:bg-navy hover:text-cream hover:border-navy hover:-translate-y-0.5 hover:shadow-soft cursor-default"
+          class="bg-navy/[0.06] text-navy border border-navy/[0.20] px-4 py-1.5 rounded-full text-[0.75rem] font-semibold transition-all duration-300 hover:bg-navy hover:text-cream hover:border-navy hover:-translate-y-0.5 hover:shadow-soft cursor-default"
         >
           {{ pill }}
         </span>
@@ -310,7 +322,7 @@ const navSections = ['About', 'Skills', 'Projects', 'Contact']
             <span
               v-for="tag in project.tags"
               :key="tag"
-              class="text-[0.65rem] px-3 py-1 rounded-full tracking-wide bg-navy/[0.05] text-navy/65 font-medium border border-navy/[0.06]"
+              class="text-[0.65rem] px-3 py-1 rounded-full tracking-wide bg-navy/[0.08] text-navy font-bold border border-navy/[0.20]"
             >
               {{ tag }}
             </span>
